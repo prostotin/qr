@@ -74,12 +74,11 @@
             update: function () {
                 document.getElementById('qrcodegenerated').innerHTML = "<h1>" + "QRCode generated for: " + document.getElementById('link').value + "</h1>";
                 var link = document.getElementById('link').value;
-                var request = "\<img src=\"https://qrtag.net/api/qr_12.svg?url=" + link + " alt=\"qrtag\">"
+                var request = "\<img src=\"https://qrtag.net/api/qr_12.svg?url=" + link + "\" alt=\"qrtag\">"
                 document.getElementById('qrimage').innerHTML = request
-
+                var localStorageLink ="https://qrtag.net/api/qr_12.svg?url=" + link
                 if (typeof (Storage) !== "undefined") {
-                    localStorage.setItem(link, request);
-                    
+                    localStorage.setItem(link, localStorageLink);
                 }
                
                 // iterate localStorage
